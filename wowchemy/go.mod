@@ -1,3 +1,3 @@
-module github.com/wowchemy/wowchemy-hugo-modules/wowchemy
+module github.com/newinnovations/hugo-template/wowchemy
 
 go 1.15
