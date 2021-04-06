@@ -12,7 +12,7 @@
   {{ $js_license := printf "/*! Wowchemy v%s | https://wowchemy.com/ */\n" site.Data.wowchemy.version }}
   {{ $js_license := $js_license | printf "%s/*! Copyright 2016-present George Cushen (https://georgecushen.com/) */\n" }}
   {{ $js_license := $js_license | printf "%s/*! License: https://github.com/wowchemy/wowchemy-hugo-modules/blob/main/LICENSE.md */\n" }}
-  {{ $js_bundle_head := $js_license | resources.FromString "js/bundle-head.js" }}
+  {{ $js_bundle_head := "" | resources.FromString "js/bundle-head.js" }}
   {{ $wcDarkLightEnabled := site.Params.day_night | default false }}
   {{ $wcIsSiteThemeDark := not (.Scratch.Get "light") | default false }}
   {{ $js_params := dict "wcDarkLightEnabled" $wcDarkLightEnabled "wcIsSiteThemeDark" $wcIsSiteThemeDark }}
@@ -20,7 +20,7 @@
   {{- if hugo.IsProduction -}}
     {{ $js_bundle = $js_bundle | minify }}
   {{- end -}}
-  {{ $js_bundle := slice $js_bundle_head $js_bundle | resources.Concat "js/wowchemy-init.min.js" }}
+  {{ $js_bundle := slice $js_bundle_head $js_bundle | resources.Concat "js/newinnovations-init.min.js" }}
   {{- if hugo.IsProduction -}}
     {{- $js_bundle = $js_bundle | js.Build (dict "format" "iife") | fingerprint "md5" -}}
   {{- else -}}
