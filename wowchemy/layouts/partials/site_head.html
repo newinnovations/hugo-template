@@ -106,11 +106,11 @@
         {{ printf "<link rel=\"stylesheet\" href=\"%s\" crossorigin=\"anonymous\" title=\"hl-dark\" media=\"print\" onload=\"this.media='all'\" disabled>" (printf $css.highlight.url $css.highlight.version .) | safeHTML }}
       {{ else }}
         {{ if eq ($scr.Get "light") true }}
-          {{ printf "<link rel=\"stylesheet\" href=\"%s\" crossorigin=\"anonymous\" title=\"hl-light\" media=\"print\" onload=\"this.media='all'\">" (printf $css.highlight.url $css.highlight.version "github") | safeHTML }}
-          {{ printf "<link rel=\"stylesheet\" href=\"%s\" crossorigin=\"anonymous\" title=\"hl-dark\" media=\"print\" onload=\"this.media='all'\" disabled>" (printf $css.highlight.url $css.highlight.version "dracula") | safeHTML }}
+          <link rel="stylesheet" href="/css/highlight-js-light.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="/css/highlight-js-dark.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
         {{ else }}
-          {{ printf "<link rel=\"stylesheet\" href=\"%s\" crossorigin=\"anonymous\" title=\"hl-light\" media=\"print\" onload=\"this.media='all'\" disabled>" (printf $css.highlight.url $css.highlight.version "github") | safeHTML }}
-          {{ printf "<link rel=\"stylesheet\" href=\"%s\" crossorigin=\"anonymous\" title=\"hl-dark\" media=\"print\" onload=\"this.media='all'\">" (printf $css.highlight.url $css.highlight.version "dracula") | safeHTML }}
+          <link rel="stylesheet" href="/css/highlight-js-light.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'" disabled>
+          <link rel="stylesheet" href="/css/highlight-js-dark.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'">
         {{ end }}
       {{ end }}
     {{ end }}
