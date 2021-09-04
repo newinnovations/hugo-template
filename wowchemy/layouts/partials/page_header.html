@@ -54,6 +54,18 @@
 {{else if eq $placement 3}}
   {{ $image_container = "container-fluid" }}
   {{ $image := $featured.Fit "2560x2560" }}
+{{else if eq $placement 10}}
+  {{ $image_container = "article-container" }}
+  {{ $image = $featured.Resize "150x" }}
+{{else if eq $placement 11}}
+  {{ $image_container = "article-container" }}
+  {{ $image = $featured.Resize "300x" }}
+{{else if eq $placement 12}}
+  {{ $image_container = "article-container" }}
+  {{ $image = $featured.Resize "600x" }}
+{{else if eq $placement 13}}
+  {{ $image_container = "article-container" }}
+  {{ $image = $featured.Resize "900x" }}
 {{else}}
   {{ $image_container = "article-container" }}
   {{ if gt $featured.Width 1200 }}
